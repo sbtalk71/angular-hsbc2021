@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class EmpService {
+  
 
   private url = "/assets/data/empdata.json";
 
@@ -20,5 +21,20 @@ export class EmpService {
 
   public getEmpJsonData(): Observable<Emp[]> {
     return this._http.get<Emp[]>(this.url);
+  }
+
+  // public findEmpById(empId: number) {
+
+  //   let emp=empdata.filter((data)=>{return data.empId==empId?data:null});
+  //   console.log(emp)
+  //   return emp;
+  // }
+
+  public findEmpById(empId: number) {
+    let emp:Emp[]=[];
+    this.getEmpJsonData().subscribe((data)=>emp=data);
+    setTimeout(()=>{},100);
+    return emp.filter((d)=>{return d.empId==empId?d:null})
+    
   }
 }

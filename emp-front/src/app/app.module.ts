@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
 import { EmpMasterComponent } from './emp-master/emp-master.component';
 import { EmpService } from './emp.service';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChildComponent,
-    EmpMasterComponent
+    EmpMasterComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

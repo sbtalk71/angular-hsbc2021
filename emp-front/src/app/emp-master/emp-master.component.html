@@ -1,10 +1,26 @@
 <h1>Emp List</h1>
 
 <div *ngIf="show;else noShow">
+    <!--
     <ul>
         <li *ngFor="let emp of empList">{{emp.empId}} {{emp.name}} {{emp.salary}} {{emp.city}} {{emp.doj}}</li>
     </ul>
+
+-->
+<div class="container">
+    <table class="table table-success table-striped" >
+        <tbody>
+        <tr *ngFor="let emp of empList">
+            <td (click)="onClick(emp.empId)">{{emp.empId}}</td>
+            <td>{{emp.name}}</td>
+            
+        </tr>
+    </tbody>
+    </table>
+</div>
 </div>
 <ng-template #noShow>
-    <h1>No Data FOund</h1>
+    <h1>No Data Found</h1>
 </ng-template>
+<hr>
+<app-details [emp]="empData"></app-details>
