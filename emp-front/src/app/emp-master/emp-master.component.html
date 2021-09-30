@@ -1,0 +1,10 @@
+<h1>Emp List</h1>
+
+<div *ngIf="show;else noShow">
+    <ul>
+        <li *ngFor="let emp of empList">{{emp.empId}} {{emp.name}} {{emp.salary}} {{emp.city}} {{emp.doj}}</li>
+    </ul>
+</div>
+<ng-template #noShow>
+    <h1>No Data FOund</h1>
+</ng-template>
